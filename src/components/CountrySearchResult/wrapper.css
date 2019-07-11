@@ -1,0 +1,33 @@
+.ctry-list-list__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.ctry-list-list__grid .ctry-list-list__items {
+  display: flex;
+  justify-content: left;
+  flex: 0 0 100%;
+  border-bottom: 1px solid #1111;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ctry-list-list__items .ctry-list-list__item {
+  flex: 0 0 50%;
+  font-size: 18px;
+  color: #111111;
+  text-align: left;
+}
+
+.ctry-list-list__item--value {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 600px) {
+  .ctry-list-list__items .ctry-list-list__item {
+    flex: 0 0 100%;
+  }
+}
