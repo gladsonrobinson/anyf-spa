@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  anyfin-spa:
-    image: anyfin-spa
+  anyf-spa:
+    image: anyf-spa
     command: ["npm", "start"]
     ports:
       - 3000:3000

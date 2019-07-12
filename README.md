@@ -62,9 +62,9 @@ Requirements
 
 #Build and run
 
-docker build --tag=anyfin-spa .
+docker build --tag=anyf-spa .
 
-docker-compose -p anyfin-spa up
+docker-compose -p anyf-spa up
 
  
 #check the app in
@@ -89,7 +89,7 @@ Requirements
 ### Node v8.0.0 +
 # Go inside the directory
 
-cd anyfin-spa
+cd anyf-spa
 
 # Install dependencies
 

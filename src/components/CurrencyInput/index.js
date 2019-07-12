@@ -8,6 +8,7 @@ export default class CurrencyInput extends React.Component {
   render() {
     return (
       <div className="">
+        <span>Enter Value in SEK</span>
         <input
           type="number"
           value={this.props.value}
