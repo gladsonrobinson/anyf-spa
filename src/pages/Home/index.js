@@ -4,20 +4,28 @@ import {
   ContentWrapper,
   SearchBox,
   InfoMsg,
-  CountrySearchResult
+  CountrySearchResult,
+  CurrencyInput
 } from "../../components";
 
 export default class Home extends React.Component {
   render() {
     return (
       <CountriesContainer>
-        {({ countryList, fetchStatus, errorMessage, getCountryDetailsByName  }) => {
+        {({
+          countryList,
+          fetchStatus,
+          errorMessage,
+          getCountryDetailsByName,
+          onCurrencyValueChange,
+          currencyInput
+        }) => {
           return (
             <ContentWrapper>
               <SearchBox onSearch={getCountryDetailsByName} />
               <InfoMsg fetchStatus={fetchStatus} errorMessage={errorMessage} />
-              
-              <CountrySearchResult countryList={countryList} />
+              <CurrencyInput value={currencyInput} onCurrencyValueChange={onCurrencyValueChange} />
+              <CountrySearchResult countryList={countryList} currencyInput={currencyInput} />
             </ContentWrapper>
           );
         }}

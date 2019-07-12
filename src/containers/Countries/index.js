@@ -1,13 +1,14 @@
 import { PureComponent } from "react";
 import { connect } from "react-redux";
-import { getCountryDetailsByName } from "./actions";
+import { getCountryDetailsByName, onCurrencyValueChange } from "./actions";
 
 const mapStateToProps = state => ({
   ...state.country
 });
 
 const mapDispatchToProps = {
-  getCountryDetailsByName
+  getCountryDetailsByName,
+  onCurrencyValueChange
 };
 
 class Country extends PureComponent {

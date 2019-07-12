@@ -1,8 +1,10 @@
 import React from "react";
 import "./wrapper.css";
 import PropTypes from "prop-types";
+import { utility } from "../../services";
+const { round } = utility;
 
-const ListItem = ({ item }) => {
+const ListItem = ({ item, currencyInput }) => {
   return (
     <div className="ctry-list-list__items">
       <div className="ctry-list-list__item">
@@ -22,7 +24,8 @@ const ListItem = ({ item }) => {
         <div>
           Currency:{" "}
           <span className="ctry-list-list__item--value">
-            {item.currencies[0].name}
+            {item.currencies[0].name}{" "}
+            {round(item.currencyValue_SEK * currencyInput, 2)}
           </span>
         </div>
       </div>
@@ -30,12 +33,18 @@ const ListItem = ({ item }) => {
   );
 };
 
-const CountrySearchResult = ({ countryList }) => {
+const CountrySearchResult = ({ countryList, currencyInput = 0 }) => {
   return (
     <div className="ctry-list-list">
       <div className="ctry-list-list__grid">
         {countryList.map(item => {
-          return <ListItem key={item.numericCode} item={item} />;
+          return (
+            <ListItem
+              key={item.numericCode}
+              item={item}
+              currencyInput={currencyInput}
+            />
+          );
         })}
         <div />
       </div>

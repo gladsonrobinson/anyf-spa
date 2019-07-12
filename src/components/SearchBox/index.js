@@ -32,7 +32,7 @@ export default class SearchBox extends React.Component {
               type="text"
               className="search-input"
               onChange={this.handleInputChange}
-              placeholder="Search by city name"
+              placeholder="Search by country name"
             />
             <button type="submit" className="search-btn">
               Search
