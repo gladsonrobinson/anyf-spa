@@ -5,6 +5,7 @@ import { utility } from "../../services";
 const { round } = utility;
 
 const ListItem = ({ item, currencyInput }) => {
+  let curncyCnvrtdRate = round(item.currencyValue_SEK * currencyInput, 2);
   return (
     <div className="ctry-list-list__items">
       <div className="ctry-list-list__item">
@@ -24,8 +25,9 @@ const ListItem = ({ item, currencyInput }) => {
         <div>
           Currency:{" "}
           <span className="ctry-list-list__item--value">
-            {item.currencies[0].name}{" "}
-            {round(item.currencyValue_SEK * currencyInput, 2)}
+            {curncyCnvrtdRate ? curncyCnvrtdRate : ""}
+            {"  "}
+            {item.currencies[0].name}
           </span>
         </div>
       </div>

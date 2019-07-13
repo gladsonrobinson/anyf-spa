@@ -20,12 +20,21 @@ export default class Home extends React.Component {
           onCurrencyValueChange,
           currencyInput
         }) => {
+          let showCurrencyInput =
+            !fetchStatus && !errorMessage && countryList.length > 0;
           return (
             <ContentWrapper>
               <SearchBox onSearch={getCountryDetailsByName} />
               <InfoMsg fetchStatus={fetchStatus} errorMessage={errorMessage} />
-              <CurrencyInput value={currencyInput} onCurrencyValueChange={onCurrencyValueChange} />
-              <CountrySearchResult countryList={countryList} currencyInput={currencyInput} />
+              <CurrencyInput
+                value={currencyInput}
+                onCurrencyValueChange={onCurrencyValueChange}
+                displaySt={showCurrencyInput}
+              />
+              <CountrySearchResult
+                countryList={countryList}
+                currencyInput={currencyInput}
+              />
             </ContentWrapper>
           );
         }}

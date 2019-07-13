@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./currency-input.css";
 
 export default class CurrencyInput extends React.Component {
   handleChange = e => {
@@ -7,19 +8,25 @@ export default class CurrencyInput extends React.Component {
   };
   render() {
     return (
-      <div className="">
-        <span>Enter Value in SEK</span>
-        <input
-          type="number"
-          value={this.props.value}
-          onChange={this.handleChange}
-        />
-      </div>
+      <>
+        {this.props.displaySt && (
+          <div className="currnecy-input">
+            <span>Enter Value in SEK</span>
+            <input
+              type="number"
+              className="currnecy-input--field"
+              value={this.props.value}
+              onChange={this.handleChange}
+            />
+          </div>
+        )}
+      </>
     );
   }
 }
 
 CurrencyInput.CurrencyInput = {
   value: PropTypes.number.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  displaySt: PropTypes.bool
 };
